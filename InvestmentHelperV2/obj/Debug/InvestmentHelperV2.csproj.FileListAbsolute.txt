@@ -1,0 +1,4 @@
+C:\Dev\Mini Project\InvestmentHelperV2\InvestmentHelperV2\bin\InvestmentHelperV2.dll
+C:\Dev\Mini Project\InvestmentHelperV2\InvestmentHelperV2\bin\InvestmentHelperV2.pdb
+C:\Dev\Mini Project\InvestmentHelperV2\InvestmentHelperV2\obj\Debug\InvestmentHelperV2.dll
+C:\Dev\Mini Project\InvestmentHelperV2\InvestmentHelperV2\obj\Debug\InvestmentHelperV2.pdb
