@@ -55,6 +55,7 @@
     <Content Include="AdminLogin.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="SQL Scripts\Tables.sql" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
