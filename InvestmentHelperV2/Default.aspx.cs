@@ -25,6 +25,7 @@ namespace InvestmentHelperV2
 
             if (this.VerifyLogin(email, pwd))
             {
+                SiteMaster.LoggedIn = true;
                 this.PutMessage("Success!");
             }
             else

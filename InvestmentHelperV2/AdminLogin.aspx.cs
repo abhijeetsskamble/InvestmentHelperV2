@@ -21,6 +21,7 @@ namespace InvestmentHelperV2
 
             if (adminEmail == "K@123.com" && adminPwd == "123@")
             {
+                SiteMaster.LoggedIn = true;
                 Response.Redirect("AdminControl.aspx");
             }
             else

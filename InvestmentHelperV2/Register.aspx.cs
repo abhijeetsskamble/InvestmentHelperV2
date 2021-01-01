@@ -21,6 +21,13 @@ namespace InvestmentHelperV2
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             var customerDetails = new Customer();
+            customerDetails.Name = txtName.Text;
+            customerDetails.Email = txtEmail.Text;
+            customerDetails.Mobile = txtMobile.Text;
+            customerDetails.Address = txtAddress.Text;
+            customerDetails.Password = txtPwd.Text;
+            customerDetails.ConfirmPassword = txtConPwd.Text;
+
             var result = SetCustomerProperties(customerDetails);
 
             if (result)
@@ -35,30 +42,30 @@ namespace InvestmentHelperV2
             }
         }
 
-         private bool SetCustomerProperties(Customer customerDetails)
+        public bool SetCustomerProperties(Customer customerDetails, bool raiseError = true)
         {
             bool validFields = true;
-            customerDetails.Name = txtName.Text;
-            customerDetails.Email = txtEmail.Text;
 
-            customerDetails.Mobile = txtMobile.Text;
-            if (customerDetails.Mobile.Length != 10)
+             if (customerDetails.Mobile.Length != 10)
             {
-                this.RaiseIssue(lblMobile, "Invalid mobile number");
+                if(raiseError)
+                    this.RaiseIssue(lblMobile, "Invalid mobile number");
                 validFields = false;
             }
 
-            customerDetails.Address = txtAddress.Text;
+
             if (string.IsNullOrEmpty(customerDetails.Address) || customerDetails.Address.Length < 5)
             {
-                this.RaiseIssue(lblAddress, "Address is empty or too small");
+                if (raiseError)
+                    this.RaiseIssue(lblAddress, "Address is empty or too small");
                 validFields = false;
             }
 
-            customerDetails.Password = txtPwd.Text;
-            if (customerDetails.Password != txtConPwd.Text)
+
+            if (customerDetails.Password != customerDetails.ConfirmPassword)
             {
-                this.RaiseIssue(lblConPwd, "Password do not match");
+                if (raiseError)
+                    this.RaiseIssue(lblConPwd, "Password do not match");
                 validFields = false;
             }
 

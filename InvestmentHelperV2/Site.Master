@@ -28,6 +28,14 @@
                         [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
                     </LoggedInTemplate>
                 </asp:LoginView>
+
+                <asp:LoginView ID="LogoutView" runat="server" Visible= "false" 
+                    EnableViewState="false">
+                    <AnonymousTemplate>
+                        <asp:Button ID="btnLogOut" runat="server" Text="Log out" ForeColor="Black" 
+                            onclick="btnLogOut_Click" />
+                    </AnonymousTemplate>
+                </asp:LoginView>
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
