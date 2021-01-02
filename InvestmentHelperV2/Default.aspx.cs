@@ -13,6 +13,7 @@ namespace InvestmentHelperV2
     {
         private readonly string ConnectionString = ConfigurationManager.ConnectionStrings["IHConnectionString"].ConnectionString;
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -26,7 +27,12 @@ namespace InvestmentHelperV2
             if (this.VerifyLogin(email, pwd))
             {
                 SiteMaster.LoggedIn = true;
-                this.PutMessage("Success!");
+
+                HttpCookie Cookie = new HttpCookie("CustomerEmail");
+                Cookie.Value = email;
+                Cookie.Expires = DateTime.Now.AddHours(2);
+                Response.Cookies.Add(Cookie);
+                Response.Redirect("CustomerControl.aspx");  
             }
             else
                 this.PutMessage("Failure");

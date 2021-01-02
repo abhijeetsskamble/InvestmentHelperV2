@@ -9,6 +9,8 @@ CREATE TABLE PersonalInfo (CustomerId INT, Mobile VARCHAR(10), Email VARCHAR(50)
 
 CREATE TABLE LoginDetails (CustomerId INT, Password VARCHAR(50))
 
+CREATE TABLE InvestmentInfo (CustomerId INT, DOB DATE, Income FLOAT, OtherIncome FLOAT, RENT FLOAT, EF VARCHAR(20), NPS BIT, Risk VARCHAR(20))
+
 
 SELECT * FROM Customer
 SELECT * FROM PersonalInfo 

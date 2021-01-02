@@ -11,7 +11,7 @@ namespace InvestmentHelperV2
     {
         public static bool LoggedIn = false;
 
-        protected void Page_Load(object sender, EventArgs e)
+        public void Page_Load(object sender, EventArgs e)
         {
             if (LoggedIn)
             {

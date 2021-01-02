@@ -8,7 +8,7 @@
     <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red" Visible="False"></asp:Label>
     <br/>
     <br/>
-    <Table ID="tblRegistration">
+    <Table ID="tlbAdminCustomerView">
         <tr>
             <td style="width: 364px" class="modal-sm">
                 <asp:Label ID="lblCustomerName" runat="server" Text="Customer Name" CssClass="la"></asp:Label>
