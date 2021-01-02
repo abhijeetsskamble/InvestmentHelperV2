@@ -17,15 +17,16 @@ namespace InvestmentHelperV2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Get customer info
+            if (Request.Cookies["CustomerEmail"] != null)
+            {
+                txtEmail.Text = Request.Cookies["CustomerEmail"].Value.ToString();
+            }
+            this.GetCustomerDetails(txtEmail.Text);
+
+            // Don't want to call this every time
             if (!Page.IsPostBack)
             {
-                // Get customer info
-                if (Request.Cookies["CustomerEmail"] != null)
-                {
-                    txtEmail.Text = Request.Cookies["CustomerEmail"].Value.ToString();
-                }
-                this.GetCustomerDetails(txtEmail.Text);
-
                 this.RefreshData();
             }
         }
@@ -39,9 +40,15 @@ namespace InvestmentHelperV2
             {
                 // If investment info is empty, add investment info
                 lblStatus.Visible = true;
+
+                lblAlreadyFilled.Visible = false;
+                btnUpdateExisting.Visible = false;
+                lblUpdateExisting.Visible = false;
             }
             else
             {
+                lblStatus.Visible = false;
+
                 lblAlreadyFilled.Visible = true;
                 btnUpdateExisting.Visible = true;
                 lblUpdateExisting.Visible = true;
